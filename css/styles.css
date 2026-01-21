@@ -61,7 +61,7 @@ header p {
 }
 
 nav {
-    background-color: #e5538b;
+    background-color: #e5538b;  /*This is the webpage seleciton header part on the website*/
     padding: 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
