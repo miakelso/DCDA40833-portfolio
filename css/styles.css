@@ -185,6 +185,30 @@ main section li {
 }
 
 /* =========================
+   Side-by-side image row
+   ========================= */
+.image-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin: 2rem 0;
+}
+
+.image-row figure {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-row img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+/* =========================
    Code Blocks
    ========================= */
 /* Improve pre/code styling for Python code */
