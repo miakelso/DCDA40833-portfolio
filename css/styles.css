@@ -151,43 +151,24 @@ main section li {
     margin-bottom: 0.5rem;
 }
 
-/* =========================
-   Data Visualizations (Tableau Full-Width)
-   ========================= */
+/* ========================= 
+   Data Visualizations 
+   ========================= */ 
+/* Container for charts and images */ 
+.viz-container { 
+    margin: 2rem 0; text-align: center; 
+} 
 
-/* Full-width visualization container */
-.viz-container {
-    width: 100vw;                     /* Make container span full viewport width */
-    margin-left: calc(-50vw + 50%);   /* Center the full-width container */
-    background: white;                /* Keep background consistent */
-    padding: 2rem 0;                  /* Top/bottom padding */
-    text-align: center;               /* Center content inside */
+.viz-container img {
+     max-width: 100%; /* Responsive: never wider than container */ 
+     height: auto; /* Maintain aspect ratio */ 
+     border-radius: 8px; 
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 0.5rem; 
+    } 
+/* Figure captions */ 
+.viz-container figcaption { 
+    font-style: italic; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; 
 }
-
-/* Tableau-specific elements */
-.tableauPlaceholder,
-.tableauViz {
-    width: 100% !important;           /* Ensure Tableau viz fills container */
-    height: 850px;                     /* Fixed height for consistent display */
-    display: block;                   /* Ensure block formatting */
-}
-
-/* Figure styling inside viz-container */
-.viz-container figure {
-    width: 95%;                        /* Slight padding inside container */
-    margin: auto;                      /* Center figure */
-}
-
-/* Optional figcaption for instructions */
-.viz-container figcaption,
-.viz-container p {
-    font-style: italic;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    text-align: center;
-}
-
 
 /* Grid layout for multiple visualizations */
 .viz-grid {
