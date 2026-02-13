@@ -199,7 +199,7 @@ main section li {
 /* Figure captions & instructions */
 .lab4-page .viz-container figcaption,
 .lab4-page .viz-container p {
-    font-style: italic;
+    font-style: normal;
     color: var(--text-secondary);
     font-size: 0.9rem;
     margin-top: 0.5rem;
