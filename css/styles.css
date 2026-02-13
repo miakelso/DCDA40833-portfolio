@@ -169,6 +169,42 @@ main section li {
 .viz-container figcaption { 
     font-style: italic; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; 
 }
+/* =========================
+   Data Visualizations (Lab 4 Tableau Full-Width)
+   ========================= */
+
+/* Apply only on Lab 4 page */
+.lab4-page .viz-container {
+    width: 100vw;                     /* Full viewport width */
+    margin-left: calc(-50vw + 50%);   /* Center container */
+    background: white;                /* Keep background consistent */
+    padding: 2rem 0;                  /* Top/bottom spacing */
+    text-align: center;               /* Center content */
+}
+
+/* Tableau viz elements */
+.lab4-page .tableauPlaceholder,
+.lab4-page .tableauViz {
+    width: 100% !important;           /* Fill container */
+    height: 850px;                     /* Fixed height for consistency */
+    display: block;                   /* Ensure proper layout */
+}
+
+/* Figure styling inside viz-container */
+.lab4-page .viz-container figure {
+    width: 95%;                        /* Slight padding inside container */
+    margin: auto;                      /* Center figure */
+}
+
+/* Figure captions & instructions */
+.lab4-page .viz-container figcaption,
+.lab4-page .viz-container p {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
 
 /* Grid layout for multiple visualizations */
 .viz-grid {
