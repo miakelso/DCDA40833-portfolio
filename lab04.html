@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Critique | Mia Kelso</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="lab02.html">Lab 2: AI Evaluation</a>
+            <a href="lab03.html" class="active">Lab 3: Visualization Critique</a>
+            <a href="lab04.html">Lab 4: Tableau Visualization</a>
+            <!-- Add more lab links as the semester progresses -->
+        </nav>
+        <h1>Tableau Visualization</h1>
+    </header>
+
+    <main>
+        <section class = "viz-container">
+            <h2>Visualization</h2>
+            <figure>
+                <p> Instructions: Click on a country in the bar graph to highlight it on the map.</p>
+                <div><div class='tableauPlaceholder' id='viz1770939183369' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Lab4-TableauVisualization&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Lab4-TableauVisualization&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Lab4-TableauVisualization&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1770939183369');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></div>
+            </figure>
+        </section>
+        <section>
+            <h2>Reflection and Analysis</h2>
+            
+            <h3>Data Preparation</h3>
+            <p>I chose to source my dataset from Kaggle. The topic I chose was global coffee consumption because in my travels I have visited several countries that mass produce coffee, and thus have visited several coffee plantations. I wanted a dataset that connected to my personal interests while also providing clear quantitative metrics (coffee consumption in tons) and categorical dimensions (country and region) that would allow for exploratory visualization.</p>
+            <p>To prepare the data for a successful upload, I logged in to Kaggle and downloaded the CSV file. Initially, I reviewed the file to make sure the column headers were clearly labeled and that the data types would be recognized correctly by Tableau (for example, ensuring the “Country” field would be treated as a geographic dimension and consumption values as numerical measures). I had no major technical errors uploading the data into Tableau Public. I simply dragged and dropped the CSV from my desktop into the Data Source section in the workbook.</p>
+            <p>However, I did notice that several countries had missing coffee consumption values for 2019. Because blank data points would distort the visualizations, I chose to exclude Brazil, Canada, Bosnia and Herzegovina, Iceland, and Lebanon from the analysis since their values were incomplete for the year I focused on. Cleaning the dataset in this way ensured that the visualization reflected accurate comparisons between countries with complete data.</p>
+
+            <h3>Design Choices</h3>
+            <p>For my visualization, I chose to make two worksheets and display them on one dashboard for easy user access and comparison. I wanted to present the same metric (coffee consumption in 2019 measured in tons) through two different visual perspectives to help users better understand both magnitude and geographic distribution. For my first worksheet, I displayed the coffee consumption data in a bar graph format with the vertical axis representing the countries in the dataset and the horizontal axis representing each country’s coffee consumption in 2019. I chose a bar chart because it is effective for ranking and comparing categorical data, making it easy to see which countries consume more or less coffee at a glance. Countries served as the primary dimension, while coffee consumption (tons) served as the main measure/metric.</p>
+            <p>For my second worksheet, I displayed the same data on a map visualization so users could understand geographic patterns and see how countries in close proximity to one another compared. I ensured that country names were displayed on the map to improve readability for users unfamiliar with certain regions.</p>
+            <p>Finally,I decided to place both visualizations on a single dashboard because I wanted to increase usability and allow users to compare the same metric across different visual formats. While designing the dashboard, I initially had trouble fitting both worksheets into one space. However, I realized that removing size limitations on the dashboard allowed both visualizations to display clearly without overcrowding. I also added interactivity by using the highlighter button on the toolbar. Once selected, I chose “Country” so users could click on a country in one visualization and have it highlighted in the other visualization as well. This feature improves usability and encourages exploration. If I were to continue refining the dashboard, I would add a legend or short instructions at the top so users know this feature is available.</p>
+            
+            <h3>Expected Patterns</h3>
+            <p>As I mentioned before, I have visited several countries that produce large amounts of coffee and have been to the plantations and farms where the coffee is produced. Based on my understanding of global economics and travel experiences, I hypothesized that although some countries produce large amounts of coffee, countries with stronger economies and higher GDP would likely consume more coffee domestically.</p>
+            <p>Before building the visualization, I expected to see countries such as the United States and major European nations showing higher coffee consumption compared to developing economies. After examining the bar chart, this expectation was largely confirmed. For example, the United States appears as the highest consumer, with 27,310 tons consumed in 2019. The next closest country, Germany, consumed 8,670 tons, a difference of 18,640 tons. This significant gap is clearly visible on the left side of the bar chart, where the United States stands out compared to other countries.</p>
+            <p>Although I expected the United States to lead in coffee consumption, I did not anticipate the magnitude of the difference between it and the rest of the dataset. The visualization confirmed my understanding that wealthier nations tend to have higher consumption levels, while countries with smaller economies generally appeared lower on the chart. Focusing on the top portion of the bar graph demonstrates how strongly economic factors may influence consumption patterns.</p>
+            
+            <h3>Surprises & Outliers</h3>
+            <p>One surprise, as I mentioned earlier, was that the dataset did not include many Central and South American countries that are major coffee producers. While Brazil was listed, it did not contain coffee consumption data for 2019, which required me to exclude it from the visualization along with Canada, Bosnia and Herzegovina, Iceland, and Lebanon due to missing values. This was unexpected because these countries could have provided interesting comparisons between production and consumption.</p>
+            <p>Another surprise appeared within the ranked bar chart. Italy is globally known for its strong coffee culture, so I assumed it would rank closer to #2 or #3 in consumption. Instead, it appeared around #5. Seeing Italy lower than expected challenged my assumptions about how cultural reputation translates into measurable consumption volume.</p>
+            <p>The most obvious outlier in the dataset was the United States. With 27,310 tons consumed, 18,640 tons more than Germany, it stands significantly apart from all other countries. This deviation is visually striking on the bar chart and highlights how one country can dominate the dataset, which may influence overall patterns and averages.</p>
+
+            <h3>Questions for Further Investigation</h3>
+            <p>1. How does coffee consumption in South and Central American countries that produce coffee compare to that of countries that primarily import coffee?</p>
+            <p>2. How does national coffee culture translate into measurable consumption? For example, do countries with strong café traditions consume more coffee overall or simply consume it differently?</p>
+            <p>3. Is there a measurable correlation between GDP, disposable income, and national coffee consumption levels?</p>
+            <p>4. Within high-consumption countries, are there regional differences? For example, do certain cities or regions consume significantly more coffee than others?</p>
+            <p>5. What types of coffee (instant, espresso-based, specialty, etc.) are most popular in high-consumption countries, and how might that influence industry profits?</p>
+            <p>6. Did the expansion of major coffee chains such as Starbucks contribute significantly to increased coffee consumption in the United States, or were cultural habits already driving the trend?</p>
+            
+            <h3>Tool Evaluation</h3>
+            <p>Tableau was very effective for building clear and interactive visualizations. The drag and drop interface made it easy to create both a bar chart and a map quickly, and the highlighter feature allowed my worksheets to interact in a way that improved usability. Compared to Excel or Google Sheets, Tableau makes it much easier to build dashboards and interactive visuals rather than just static charts.</p>
+            <p>One limitation I encountered was formatting the dashboard layout, since fitting multiple worksheets required some trial and error. Tableau also works best when the data is already clean, since missing values had to be handled before visualization. Tools like Python offer stronger data analysis and cleaning capabilities, while Tableau excels most in visual communication.</p>
+        
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Mia Kelso</p>
+    </footer>
+</body>
+</html>
