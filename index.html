@@ -11,6 +11,11 @@
 <body>
     <!-- Navigation: Links to all portfolio pages -->
     <nav>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
@@ -121,5 +126,34 @@
         <p><a href="https://github.com/miakelso/DCDA40833-portfolio.git">View Repository on GitHub</a></p>  <!-- This is my new link to my Github repository. If I want to go the the Github website directly, instead of typing everything in manually I can click this link and it automatically takes me to my DCDA40833-portfolio site page on GitHub (very handy)-->
         <p>&copy; 2026 Mia Kelso | DCDA 40833 | TCU</p>
     </footer>
+
+    <!-- Hamburger Menu Script -->
+    <script>
+        // Get hamburger button and navigation menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+        
+        // Toggle menu when hamburger is clicked
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

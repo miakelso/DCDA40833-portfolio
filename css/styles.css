@@ -100,6 +100,97 @@ nav a:hover {
 }
 
 /* =========================
+   Hamburger Menu
+   ========================= */
+/* Hamburger button - hidden by default on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    z-index: 101;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 768px) {
+    /* Show hamburger menu on mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Update nav container */
+    nav {
+        position: relative;
+        padding: 0.75rem 1rem;
+    }
+
+    /* Hide navigation list by default on mobile */
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--accent-color);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 5rem 0 2rem 0;
+        gap: 0;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+    }
+
+    /* When menu is active, slide it in */
+    nav ul.active {
+        right: 0;
+    }
+
+    /* Update link styles for mobile */
+    nav li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem 1.5rem;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    nav a:hover {
+        background-color: var(--secondary-color);
+    }
+}
+
+/* =========================
    Main Content
    ========================= */
 /* Style main semantic tag directly */
