@@ -16,6 +16,10 @@
             <span></span>
             <span></span>
         </button>
+        <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
@@ -153,6 +157,23 @@
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             }
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        // Check for saved dark mode preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+        }
+        
+        // Toggle dark mode when button is clicked
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
         });
     </script>
 </body>
