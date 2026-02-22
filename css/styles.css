@@ -185,6 +185,7 @@ nav a:hover {
     transition: all 0.3s ease;
     position: absolute;
     right: 1rem;
+    z-index: 200;
 }
 
 .dark-mode-toggle:hover {
