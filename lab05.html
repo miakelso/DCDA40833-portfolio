@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 | AI-Assisted Development</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+    <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+    </button>
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+    </button>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lab02.html">Lab 2</a></li>
+        <li><a href="lab03.html">Lab 3</a></li>
+        <li><a href="lab04.html">Lab 4</a></li>
+        <li><a href="lab05.html">Lab 5</a></li>
+        <li><a href="hometown-map.html">Lab 6</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Lab 5: AI-Assisted Development</h1>
+    <p>Experiments A & B Reflection</p>
+</header>
+
+<main>
+
+<section>
+    <h2>Overview</h2>
+    <p>
+        In Lab 5, I completed two experiments using AI as a development assistant.
+        Experiment A focused on enhancing my portfolio with a dark mode togglefeature,
+        while Experiment B involved writing Python code to scrape data from a website.
+        This lab emphasized understanding, not just generating, AI-assisted code.
+    </p>
+</section>
+
+<section>
+    <h2>Experiment A: Dark Mode Toggle Portfolio Enhancement</h2>
+    <p>
+        I used AI assistance to help design and debug a dark mode toggle for my portfolio.
+        The feature allows users to switch between light and dark themes and saves
+        their preference.
+    </p>
+
+    <div class="code-title">CSS Variables for Dark Mode</div>
+    <pre><code>
+body.dark-mode {
+    --text-color: #e0e0e0;
+    --bg-color: #1a1a1a;
+    --white: #2a2a2a;
+}
+    </code></pre>
+
+    <p>
+        I defined the site's main colors using CSS variables, and this block redefines them when dark mode is active, which automatically changes the colors across the site.
+    </p>
+
+    <div class="code-title">JavaScript Dark Mode Toggle</div>
+    <pre><code>
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem(
+        'darkMode',
+        body.classList.contains('dark-mode')
+    );
+});
+    </code></pre>
+
+    <p>
+       I set up the site's colors using CSS variables, and I learned how an event listener can respond to a button click and switch those color values to change the site's appearance.
+    </p>
+</section>
+
+<section>
+    <h2>Experiment B: Python Web Scraping</h2>
+    <p>
+        In Experiment B, I used Python to scrape data from a website with help from AI. The AI helped me get started, and I focused on understanding how the code collected the data and what the output represented.
+    </p>
+
+    <div class="code-title">Core Web Scraping Logic</div>
+    <pre><code>
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+    </code></pre>
+
+    <p>
+        This code shows how the scraper requests a webpage from the user and extracts information from it, even though AI helped generate the initial structure of the code.
+</section>
+
+<section>
+    <h2>Understanding Spectrum Reflection</h2>
+    <ul>
+        <li>
+            <strong>Fully understood:</strong>
+            How the dark mode toggle works visually, basic web scraping concepts, and the overall structure of the HTML and CSS.
+        </li>
+        <li>
+            <strong>AI-assisted but understood:</strong>
+            Using JavaScript to respond to user interaction, dark mode persistence, and how different Python libraries work together to scrape a website.
+        </li>
+        <li>
+            <strong>AI-generated then modified:</strong>
+            The initial dark mode toggle code and the Python scraper logic, which I adjusted to improve readability and export all scraped data into a CSV file.
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Vibe Coding Guidelines</h2>
+    <p>
+        Throughout this lab, I treated AI as a support tool rather than a replacement for learning. My personal guidelines for using AI include:
+    </p>
+    <ul>
+        <li>Using AI to help generate or structure complex code, but not submitting it without reviewing and understanding it</li>
+        <li>Adjusting AI-generated code to better fit my project’s goals and requirements</li>
+        <li>Checking AI output carefully, especially when exporting or displaying data</li>
+        <li>Being transparent about AI use by noting when code contains AI-generated components</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Demo & Screenshots</h2>
+
+    <figure class="viz-container">
+        <img src="images/Dark Mode Toggle.png" alt="Dark mode enabled screenshot">
+        <figcaption>Dark mode enabled on my portfolio</figcaption>
+    </figure>
+
+    <figure class="viz-container">
+        <img src="images/Python Scraped Data.png" alt="Python scraping output">
+        <figcaption>Example output from Python web scraping</figcaption>
+    </figure>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Mia Kelso | DCDA 40833</p>
+</footer>
+
+<script src="js/darkmode.js"></script>
+<script src="js/hamburger.js"></script>
+
+</body>
+</html>
