@@ -149,8 +149,47 @@ soup = BeautifulSoup(response.text, 'html.parser')
     <p>&copy; 2026 Mia Kelso | DCDA 40833</p>
 </footer>
 
-<script src="js/darkmode.js"></script>
-<script src="js/hamburger.js"></script>
+ <!-- Hamburger Menu Script -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Dark Mode Toggle                         Copy pasted from the original index folder toggle code
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        // Check for saved dark mode preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+        }
+        
+        // Toggle dark mode when button is clicked
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
 
 </body>
 </html>
