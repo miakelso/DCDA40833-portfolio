@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding | Mia Kelso</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+    <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+    </button>
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+    </button>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+            <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+            <li><a href="lab03.html">Lab 3: Visualization Critique</a></li>
+            <li><a href="lab04.html">Lab 4: Tableau Visualization</a></li>
+            <li><a href="lab05.html">Lab 5: Vibe Coding</a></li>
+            <li><a href="lab06.html">Lab 6: Hometown Map</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Hometown Map</h1>
+</header>
+
+<main>
+
+<section>
+ <h2>Overview</h2>
+    <p>
+        In Lab 6, I created an interactive map of my favorite hometown locations in Mansfield, TX and surrounding cities, using Python, Mapbox, and Folium.
+        The map visualizes different location types (restaurants, parks, entertainment) and includes pop-upswith descriptions and images. 
+    </p>
+
+    <!-- Embedded Interactive Map -->
+    <div class="viz-container" style="height: 600px; border: 2px solid #ccc; border-radius: 10px; overflow: hidden; margin-bottom: 30px;">
+        <iframe src="hometown_map.html" title="Hometown Map" width="100%" height="100%" style="border:0;"></iframe>
+    </div>
+</section>
+    <!-- Written Reflection -->
+<section>
+        <h2>Reflection</h2>
+        <p>
+            My basemap was inspired by <i>Water Lilies</i> by Claude Monet, one of my favorite paintings. I’ve always loved the blend of blues, greens, and soft pinks, and lilies are also one of my favorite flowers, so it felt like a personal and natural source of inspiration. In the painting, Monet uses soft brushstrokes and subtle color transitions to create reflections on the water, giving the scene a calm, dreamlike feeling. Nothing feels harsh or sharply outlined; instead, the colors blend together in a peaceful and cohesive way. I wanted my map to reflect that same calm atmosphere while still being clear and functional. When designing the basemap, I focused on translating the painting’s color palette and mood into geographic features. I used muted greens for land and soft blues for water to reflect the pond in the painting. The roads were styled in light pink tones inspired by Monet’s subtle variations in color. I avoided bold or highly saturated colors because they felt too harsh compared to the painting’s softness. My goal was to create a map that felt visually balanced and cohesive while still clearly showing important features.
+        </p>
+        <p>
+            One of the main cartographic challenges was designing the map to work across multiple zoom levels. At lower zoom levels, I limited visible features to major highways and larger city labels to avoid clutter and maintain the calm aesthetic. As users zoom in, smaller roads and additional labels gradually appear. I adjusted label sizes, halo thickness, and feature visibility by scale to keep the map readable without overwhelming the design. Balancing artistic inspiration with clear hierarchy and scale was an important part of the process. Styling the city labels was another challenge. I wanted white text with a halo so the labels would stand out against the pink roads and green land. Finding the correct settings in Mapbox Studio to adjust font color, halo, and size was more confusing than expected, but after experimenting with symbol layers, I was able to achieve a clean and readable result.
+        </p>
+        <p>
+            During the coding portion, I used ChatGPT to help structure my Python script. When my HTML output showed a blank basemap, I initially thought the issue was in my Mapbox settings. After reviewing my code and asking Claude for help, I discovered the problem was an improperly formatted CSV file. Once I fixed the column headers and delimiters, everything worked correctly. Overall, this lab challenged me creatively and technically, and I’m proud of how my artistic inspiration translated into an interactive map.
+        </p>
+    </section>
+</section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Mia Kelso | DCDA 40833</p>
+</footer>
+
+ <!-- Hamburger Menu Script -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Dark Mode Toggle                         Copy pasted from the original index folder toggle code
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        // Check for saved dark mode preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+        }
+        
+        // Toggle dark mode when button is clicked
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+
+</body>
+</html>
