@@ -9,7 +9,7 @@ from urllib.parse import quote
 
 MAPBOX_USERNAME = "miak26"
 MAPBOX_STYLE_ID = "cmm0speuh005b01sc3xts6luv"
-MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoibWlhazI2IiwiYSI6ImNtbHRtdTk5bzAxd2MzZnB0b2doaXRtdmoifQ.LxKMkAV6CVbT15G6dFaQwg"
+MAPBOX_ACCESS_TOKEN = "Access Token"  # Replace with your actual Mapbox access token
 
 # Custom Mapbox tile URL
 tiles = f"https://api.mapbox.com/styles/v1/{MAPBOX_USERNAME}/{MAPBOX_STYLE_ID}/tiles/256/{{z}}/{{x}}/{{y}}@2x?access_token={MAPBOX_ACCESS_TOKEN}"
