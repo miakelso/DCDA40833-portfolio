@@ -60,11 +60,23 @@
             <p><strong>My interests:</strong> I love to learn how things work and how to fix them, which is what drew me to DCDA. With DCDA, I can effectively analyze a problem and come up with a unique solution to solve it. I hope to become an engineer using these skills after I graduate in May of 2026!</p> <!-- I wanted to include my career aspirations because I plan to showcase this work in interviews-->
             <p><strong>What I hope to learn:</strong> Through this course, I hope to learn how to code with HTML and CSS expertly. These skills will be highly beneficial to my career in the future.</p>
 
-            <!-- Optional: Add a photo of yourself -->
-            
-            <figure class="viz-container">
-                <img src="images/Headshot 200x200 pixels.jpg" alt="Photo of Mia Kelso">     <!-- I had trouble here with my photo quality and size. I changed the photo to a 200x200 size and put the width at 100%, but the quality was terrible and the image was huge. I didn't really understand what I did wrong, so I asked for help. We figured out that I needed to remove the width portion size I resized the photo manually, maximize the image quality (used canva), and increase the photo size to 400x400, since 200x200 was too small. These changes work out well for my photo! -->
-            </figure>
+            <!-- Photo Carousel -->
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide active">
+                        <img src="images/Headshot 200x200 pixels.jpg" alt="Photo of Mia Kelso">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/MiaKelso-SneakPeek-1.jpeg" alt="Mia Kelso">
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Previous photo">&lt;</button>
+                <button class="carousel-btn next" aria-label="Next photo">&gt;</button>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                </div>
+            </div>
             
         </section>
 
@@ -175,6 +187,33 @@
             const isDark = body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', isDark);
         });
+
+        // Photo Carousel
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        let currentSlide = 0;
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
+            
+            currentSlide = (n + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+        
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+        
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => showSlide(currentSlide + 1), 5000);
     </script>
 </body>
 </html>
