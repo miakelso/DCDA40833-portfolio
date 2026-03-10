@@ -99,11 +99,15 @@ html {
 }
 
 body {
-    font-family: 'Times New Roman', monospace;
+    font-family: "Georgia", serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Added this line for smooth link hover transitions */
+a {
+    transition: all 0.2s ease;
 }
 
 /* =========================
@@ -111,7 +115,7 @@ body {
    ========================= */
 /* Style semantic tags directly - no classes needed! */
 header {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #70a288, #57816b);
     color: white;
     padding: 2rem 0;
     text-align: center;
@@ -164,9 +168,12 @@ nav a {
     transition: background-color 0.3s ease;
     border-radius: 4px;
 }
-
+/* Smooth hover for all links */
+a {
+    transition: all 0.2s ease;
+}
 nav a:hover {
-    background-color: var(--primary-color);
+    background-color: rgba(255,255,255,0.15);
 }
 
 /* Dark Mode Toggle Button */
@@ -307,7 +314,7 @@ body.dark-mode .dark-mode-toggle .moon {
    ========================= */
 /* Style main semantic tag directly */
 main {
-    max-width: 900px;          /* Don't get too wide */
+    max-width: 1000px;          /* Don't get too wide */
     margin: 2rem auto;         /* Center horizontally */
     padding: 0 1rem;           /* Space on sides for mobile */
 }
@@ -315,7 +322,7 @@ main {
 /* All sections inside main get consistent styling */
 main section {
     background-color: white;
-    padding: 2rem;
+    padding: 2.5rem;
     margin-bottom: 2rem;       /* Space between sections */
     border-radius: 8px;        /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -458,7 +465,7 @@ pre {
 }
 
 code {
-    font-family: 'Times New Roman', monospace;
+    font-family: "Georgia", serif;
 }
 
 /* Inline code (inside paragraphs) */
@@ -476,7 +483,7 @@ p code, li code {
     color: #9cdcfe;
     padding: 0.5rem 1rem;
     border-radius: 8px 8px 0 0;
-    font-family: 'Times New Roman',monospace;
+    font-family: "Georgia", serif;
     font-size: 0.85rem;
     margin-bottom: -0.5rem;
 }
@@ -579,8 +586,8 @@ tr:nth-child(even) {
 
 .portfolio-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 8px 16px rgba(77, 25, 121, 0.15);
-    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    transform: translateY(-6px) scale(1.02);
 }
 
 .portfolio-card h3 {
@@ -685,7 +692,7 @@ footer a:hover {
     margin: 2rem auto;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .carousel {
