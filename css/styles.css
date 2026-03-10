@@ -377,7 +377,7 @@ main section li {
     } 
 /* Figure captions */ 
 .viz-container figcaption { 
-    font-style: italic; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; 
+    font-style: normal; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; 
 }
 /* =========================
    Data Visualizations (Lab 4 Tableau Full-Width)
