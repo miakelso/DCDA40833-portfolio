@@ -11,17 +11,17 @@
 <body>
     <!-- Navigation: Links to all portfolio pages -->
     <nav>
-        <button class="hamburger" aria-label="Toggle navigation menu">
+        <button class="hamburger" aria-label="Toggle navigation menu">      <!-- Hamburger menu for when the page is not large enough to see all lab names (good for iphone use). Must be copied to every page of the website-->
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <button class="dark-mode-toggle" aria-label="Toggle dark mode">     <!-- Dark mode toggle button code. Must be copied to every page of website-->
             <span class="sun">☀️</span>
             <span class="moon">🌙</span>
         </button>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>                          <!-- Make sure to update in each page!!!!!!!!!!!!!!-->
             <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
             <li><a href="lab03.html">Lab 3: Visualization Critique</a></li>
             <li><a href="lab04.html">Lab 4: Tableau Visualization</a></li>
@@ -64,7 +64,7 @@
             <div class="carousel-container">
                 <div class="carousel">
                     <div class="carousel-slide active">
-                        <img src="images/MiaKelso-SneakPeek-1.jpeg " alt="Photo of Mia Kelso">
+                        <img src="images/MiaKelso-SneakPeek-1.jpeg " alt="Photo of Mia Kelso">      <!-- Note: Whichever order you want the photos appear must be reflected in the code-->
                     </div>
                     <div class="carousel-slide">
                         <img src="images/Headshot 200x200 pixels.jpg" alt="Mia Kelso">
@@ -154,10 +154,10 @@
     <!-- Footer: Links and copyright -->
     <footer>
         <p><a href="https://github.com/miakelso/DCDA40833-portfolio.git">View Repository on GitHub</a></p>  <!-- This is my new link to my Github repository. If I want to go the the Github website directly, instead of typing everything in manually I can click this link and it automatically takes me to my DCDA40833-portfolio site page on GitHub (very handy)-->
-        <p>&copy; 2026 Mia Kelso | DCDA 40833 | TCU</p>
+        <p>&copy; 2026 Mia Kelso | DCDA 40833 | TCU</p>             <!-- Just copy and paste this footer into each html page-->
     </footer>
 
-    <!-- Hamburger Menu Script -->
+    <!-- Hamburger Menu Script --> <!-- COPY TO EACH PAGE-->
     <script>
         // Get hamburger button and navigation menu
         const hamburger = document.querySelector('.hamburger');
@@ -185,7 +185,7 @@
             }
         });
 
-        // Dark Mode Toggle
+        // Dark Mode Toggle              <!-- COPY TO EACH PAGE-->
         const darkModeToggle = document.querySelector('.dark-mode-toggle');
         const body = document.body;
         
@@ -202,7 +202,7 @@
             localStorage.setItem('darkMode', isDark);
         });
 
-        // Photo Carousel
+        // Photo Carousel      
         const slides = document.querySelectorAll('.carousel-slide');
         const indicators = document.querySelectorAll('.indicator');
         const prevBtn = document.querySelector('.carousel-btn.prev');
@@ -230,4 +230,4 @@
         setInterval(() => showSlide(currentSlide + 1), 5000);
     </script>
 </body>
-</html>
+</html>         <!-- Each page must end with this!-->
