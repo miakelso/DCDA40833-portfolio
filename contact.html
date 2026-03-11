@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skills Portfolio showcasing work from DCDA 40833">
+    <meta name="author" content="Your Name">
+    <title>Mia Kelso | DCDA 40833 Skills Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+
+<body>
+
+<nav>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+            <li><a href="lab03.html">Lab 3: Visualization Critique</a></li>
+            <li><a href="lab04.html">Lab 4: Tableau Visualization</a></li>
+            <li><a href="lab05.html">Lab 5: Vibe Coding</a></li>
+            <li><a href="lab06.html">Lab 6: Hometown Map</a></li>
+            <li><a href="contact.html">Contact</a></li>    
+        </ul>
+</nav>
+
+<!-- Contact Page -->
+<section class="contact">
+<header>
+    <h1>Contact Me</h1>
+</header>
+<main>
+    <section>
+        <h2>Get in Touch</h2>
+        <p>
+            I'm always open to connecting with others in the field of digital culture and data analytics. Whether you have questions about my work or just want to chat about data and visualization, feel free to reach out!
+        </p>
+        <p>
+            You can send me an email using the contact form below, or connect with me on LinkedIn. I look forward to hearing from you!
+        </p>
+    </section>
+    
+</main>
+<!-- LinkedIn -->
+<main>
+    <section>
+        <h2>Connect on LinkedIn</h2>
+        <p>
+            I'm active on LinkedIn and would love to connect with fellow students, professionals, and anyone interested in digital culture and data analytics. Feel free to send me a connection request or message by clicking
+            <a href="https://www.linkedin.com/in/mia-kelso-b682672b2" target="_blank">here</a>!
+
+        </p>
+    </section>
+</main>
+
+<main>
+    <section>
+
+        <h2>Send a Message</h2>
+
+<!-- Formspree Contact Form -->
+<form action="https://formspree.io/f/mjgayqro" method="POST">
+<p>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+</p>
+
+<p>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+</p>
+
+<p>
+<label for="message">Message:</label>
+<textarea id="message" name="message" rows="5" required></textarea>
+</p>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+</main>
+<!-- Hamburger Menu Script -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        // Check for saved dark mode preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+        }
+        
+        // Toggle dark mode when button is clicked
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+</body>
+</html>
