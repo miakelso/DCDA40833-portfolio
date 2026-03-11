@@ -812,6 +812,7 @@ color: white;
 border: none;
 border-radius: 5px;
 cursor: pointer;
+font-family: "Georgia", serif;
 }
 
 button:hover {
