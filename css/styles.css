@@ -807,7 +807,7 @@ font-size: 14px;
 
 button {
 padding: 10px;
-background-color: #333;
+background: #333;
 color: white;
 border: none;
 border-radius: 5px;
