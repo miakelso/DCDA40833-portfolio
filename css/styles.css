@@ -788,3 +788,32 @@ body.dark-mode .carousel-container {
         font-size: 1.2rem;
     }
 }
+
+
+/* Contact form layout */
+form {
+display: flex;
+flex-direction: column;
+gap: 12px;
+margin-top: 20px;
+}
+
+input, textarea {
+padding: 10px;
+border-radius: 5px;
+border: 1px solid #ccc;
+font-size: 14px;
+}
+
+button {
+padding: 10px;
+background-color: #333;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #555;
+}
